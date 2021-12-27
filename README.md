@@ -33,6 +33,13 @@ The repository is organized with the following folder structure:
 - The `terraform` folder contains Terraform configuration for the entire infrastructure.
 - The `python` folder includes some sample python code that uses the AWS `boto3` library to work with SQS and DynamoDB.
 
+## Prerequisites
+
+The following are required for this solution:
+- Docker and Docker Compose
+- Python 3.8
+- Terraform 
+
 ## Set up and Testing
 
 1. Start LocalStack:
@@ -50,7 +57,7 @@ tf apply -auto-approve
 
 3. Send a testing message to the SQS queue
 ```
-# python folder
+# in the python folder
 python3 send-sqs.py
 ```
 4. Check the results

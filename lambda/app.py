@@ -1,8 +1,3 @@
-# https://aws-lambda-for-python-developers.readthedocs.io/en/latest/02_event_and_context/
-# https://docs.aws.amazon.com/lambda/latest/dg/invocation-async.html
-# https://boto3.amazonaws.com/v1/documentation/api/latest/guide/dynamodb.html
-# https://www.youtube.com/watch?v=Lkm3v7UDlD8
-# https://www.youtube.com/watch?v=wf5kLfSM9C0&list=PLH1ul2iNXl7vk8RUchIiMBeXqDnFTi4_M&index=5
 import boto3
 import os
 import json

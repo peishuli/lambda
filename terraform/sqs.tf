@@ -1,5 +1,5 @@
 resource "aws_sqs_queue" "sqs" {
-  name                      = "lambda"  
+  name = "lambda"
   tags = {
     Environment = "dev"
   }
