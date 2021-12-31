@@ -2,7 +2,7 @@
 
 This repository includes a sample AWS infrastructure built on *LocalStack* using Terraform. The following diagram illustrates the high level workflow of the solution:
 
-![solution](./sqs-lambda-dyanmodb.png)
+![solution](./sqs-lambda-dynamodb.png)
 
 A python client sends a Json message to a *SQS* queue which will trigger the *Lambda function* that is also written in Python. The lambda function parses the event payload and create a new item in a *DynamoDB* table. In addition, the lambda function writes logging data to *CloudWatch Logs*.
 
