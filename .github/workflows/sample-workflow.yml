@@ -1,16 +1,16 @@
 name: 'Sample Workflow'
 on:
   workflow_dispatch:
- 
 jobs:
-  name: checkout-code-and-display-its-folder-structure
-  runs-on: ubuntu-latest
-  steps:
-    - name: chekout-code
-      uses: actions/checkout@v3
-    - name: install-tree-cli
-      run: sudo apt-get install tree
-    - name: display-repo-tree
-      run |
-        cd $GITHUB_WORKSPACE
-        tree ./
+  sample-job:
+    name: Sample Job
+    runs-on: ubuntu-latest
+    steps:
+      - name: check out
+        uses: actions/checkout@v3
+      - name: download tree util
+        run: sudo apt-get install tree
+      - name: display code directory tree
+        run: |
+          cd $GITHUB_WORKSPACE
+          ls
