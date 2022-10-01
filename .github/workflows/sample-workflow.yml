@@ -15,4 +15,5 @@ jobs:
       - name: display code directory tree
         run: |
           cd $GITHUB_WORKSPACE
+          pwd
           ls
