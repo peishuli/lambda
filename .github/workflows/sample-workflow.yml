@@ -8,8 +8,10 @@ jobs:
     steps:
       - name: check out
         uses: actions/checkout@v3
+      
       - name: download tree util
         run: sudo apt-get install tree
+      
       - name: display code directory tree
         run: |
           cd $GITHUB_WORKSPACE
