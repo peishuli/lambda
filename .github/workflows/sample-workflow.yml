@@ -31,7 +31,7 @@ jobs:
         run: |
           pwd
           ls
-          rm -rf $tempDir
+          suro rm -R *
           pwd
           ls
           
