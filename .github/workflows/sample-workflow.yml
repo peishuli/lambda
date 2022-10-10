@@ -9,7 +9,7 @@ jobs:
 #       - name: check out
 #         uses: actions/checkout@v3
         
-      - name: get-timestamp
+      - id: get-timestamp
         run: |
           echo "::set-output name=timestamp::$(date +%s)"
           echo "$(date +%s)"
