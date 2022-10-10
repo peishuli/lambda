@@ -32,8 +32,7 @@ jobs:
           cat test.txt
       - name: remove-tempDir
         run: |
-          cd $GITHUB_WORKSPACE && cd ..
-          sudo rm -R tempDir
+          sudo rm -R $tempDir
           
 #       - name: display-timestamp
 #         run: echo ${{env.timestamp}}
