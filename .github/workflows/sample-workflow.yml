@@ -10,10 +10,12 @@ jobs:
 #         uses: actions/checkout@v3
         
       - name: get-timestamp
-        run: echo "::set-output name=timestamp::$(date +%s)"
+        run: |
+          echo "::set-output name=timestamp::$(date +%s)"
+          echo "$(date +%s)"
        
-      - name: display-output-of-previous-step
-        run: echo ${{steps.get-timestamp.outputs.timestamp}}
+#       - name: display-output-of-previous-step
+#         run: echo ${{steps.get-timestamp.outputs.timestamp}}
 #       - name: create-a-temp-working-folder
 #         run: |
 #           tempDir="$GITHUB_WORKSPACE/${{steps.get-timestamp.outputs.timestamp}}"
