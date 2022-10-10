@@ -5,6 +5,8 @@ jobs:
   sample-job:
     env:
       timestamp: $(date +%s) #${{steps.get-timestamp.outputs.timestamp}}
+    outputs:
+      value: $(date +%s) #${{steps.get-timestamp.outputs.timestamp}}
     name: Sample Job
     runs-on: ubuntu-latest
     steps:
