@@ -13,7 +13,7 @@ jobs:
         
       - name: create-a-temp-working-folder
         run: |
-          tempDir=${{ steps.get-timestamp.outputs.tempDir }}
+          tempDir=${{ steps.get-tempDir.outputs.tempDir }}
           sudo mkdir -p $tempDir
           
       - name: create-a-file-in-tempDir
