@@ -7,15 +7,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
 
-      - id: get-timestamp
+      - id: get-tempDir
         run: |
-          echo pwd
-          echo "$GITHUB_WORKSPACE"
-          echo "::set-output name=timestamp::$(date +%s)"        
+          echo "::set-output name=tempDir::$(date +%s)"        
         
       - name: create-a-temp-working-folder
         run: |
-          tempDir="$GITHUB_WORKSPACE/${{steps.get-timestamp.outputs.timestamp}}"
+          tempDir=${{ steps.get-timestamp.outputs.tempDir }}
           sudo mkdir -p $tempDir
           
       - name: create-a-file-in-tempDir
