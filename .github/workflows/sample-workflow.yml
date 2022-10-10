@@ -3,12 +3,17 @@ on:
   workflow_dispatch:
 jobs:
   sample-job:
+    env:
+      timestamp: $(date +%s)
     name: Sample Job
     runs-on: ubuntu-latest
     steps:
       - name: check out
         uses: actions/checkout@v3
       
+      - name: display-timestamp
+        run: echo ${{env.timestamp}}
+        
       - name: download tree util
         run: sudo apt-get install tree
       
@@ -18,3 +23,5 @@ jobs:
           pwd
           ls -a
           tree -L 2
+      - name: display-timestamp-again
+        run: echo ${{env.timestamp}}
