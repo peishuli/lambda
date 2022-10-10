@@ -10,23 +10,29 @@ jobs:
     name: Sample Job
     runs-on: ubuntu-latest
     steps:
-      - name: check out
-        uses: actions/checkout@v3
+#       - name: check out
+#         uses: actions/checkout@v3
         
       - name: get-timestamp
         run: echo "::set-output name=timestamp::$(date +%s)"
-      
-      - name: display-timestamp
-        run: echo ${{env.timestamp}}
         
-      - name: download tree util
-        run: sudo apt-get install tree
-      
-      - name: display code directory tree
+      - name: create-a-temp-working-folder
         run: |
-          cd $GITHUB_WORKSPACE
-          pwd
-          ls -a
-          tree -L 2
-      - name: display-timestamp-again
-        run: echo ${{env.timestamp}}
+          tempDir="${GITHUB_WORKSPACE}/${{steps.get-timestamp.outputs.timestamp}}"
+          echo tempDir
+          
+      
+#       - name: display-timestamp
+#         run: echo ${{env.timestamp}}
+        
+#       - name: download tree util
+#         run: sudo apt-get install tree
+      
+#       - name: display code directory tree
+#         run: |
+#           cd $GITHUB_WORKSPACE
+#           pwd
+#           ls -a
+#           tree -L 2
+#       - name: display-timestamp-again
+#         run: echo ${{env.timestamp}}
