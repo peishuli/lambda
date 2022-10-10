@@ -2,11 +2,7 @@ name: 'Sample Workflow'
 on:
   workflow_dispatch:
 jobs:
-  sample-job:
-    env:
-      timestamp: $(date +%s) #${{steps.get-timestamp.outputs.timestamp}}
-    outputs:
-      value: $(date +%s) #${{steps.get-timestamp.outputs.timestamp}}
+  sample-job:    
     name: Sample Job
     runs-on: ubuntu-latest
     steps:
