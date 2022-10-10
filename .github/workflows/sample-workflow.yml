@@ -17,3 +17,4 @@ jobs:
           cd $GITHUB_WORKSPACE
           pwd
           ls -a
+          tree -L 2
