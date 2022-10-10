@@ -30,9 +30,12 @@ jobs:
         run: |
           cd $tempDir 
           cat test.txt
+          
       - name: remove-tempDir
         run: |
-          echo $tempDir
+          pwd
+          ls
+          #echo $tempDir
           
 #       - name: display-timestamp
 #         run: echo ${{env.timestamp}}
