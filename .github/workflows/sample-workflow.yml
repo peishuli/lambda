@@ -4,12 +4,15 @@ on:
 jobs:
   sample-job:
     env:
-      timestamp: $(date +%s)
+      timestamp: ${{steps.get-timestamp.outputs.timestamp}}
     name: Sample Job
     runs-on: ubuntu-latest
     steps:
       - name: check out
         uses: actions/checkout@v3
+        
+      - name: get-timestamp
+        run: echo "::set-output name=timestamp::$(date +%s)"
       
       - name: display-timestamp
         run: echo ${{env.timestamp}}
