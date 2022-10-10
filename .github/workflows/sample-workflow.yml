@@ -12,9 +12,7 @@ jobs:
       - id: get-timestamp
         run: |
           echo "::set-output name=timestamp::$(date +%s)"
-          echo "$(date +%s)"
-      - name: get-tempDir
-        run: echo ${{env.tempDir}}
+          echo "$(date +%s)"   
         
       - name: create-a-temp-working-folder
         run: |
@@ -35,6 +33,7 @@ jobs:
         run: |
           pwd
           ls
+          sudo rm -R $tempDir
           #echo $tempDir
           
 #       - name: display-timestamp
