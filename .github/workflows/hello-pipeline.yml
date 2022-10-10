@@ -1,8 +1,0 @@
-name: Hello Pipeline
-on: [push, pull_request]
-jobs:
-  Hello:
-    name: Say Hello
-    runs-on: ubuntu-latest
-    steps:
-      - run: echo "hello world!"
