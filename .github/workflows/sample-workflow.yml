@@ -11,11 +11,13 @@ jobs:
         
       - name: get-timestamp
         run: echo "::set-output name=timestamp::$(date +%s)"
-        
-      - name: create-a-temp-working-folder
-        run: |
-          tempDir="$GITHUB_WORKSPACE/${{steps.get-timestamp.outputs.timestamp}}"
-          echo $tempDir
+       
+      - name: display-output-of-previous-step
+        run: echo ${{steps.get-timestamp.outputs.timestamp}}
+#       - name: create-a-temp-working-folder
+#         run: |
+#           tempDir="$GITHUB_WORKSPACE/${{steps.get-timestamp.outputs.timestamp}}"
+#           echo $tempDir
           
       
 #       - name: display-timestamp
