@@ -32,7 +32,7 @@ jobs:
           cat test.txt
       - name: remove-tempDir
         run: |
-          sudo rm -R $tempDir
+          echo $tempDir
           
 #       - name: display-timestamp
 #         run: echo ${{env.timestamp}}
