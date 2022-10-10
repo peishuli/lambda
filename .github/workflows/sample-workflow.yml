@@ -4,6 +4,8 @@ on:
 jobs:
   sample-job:    
     name: Sample Job
+    env:
+      tempDir: "$GITHUB_WORKSPACE/${{steps.get-timestamp.outputs.timestamp}}"
     runs-on: ubuntu-latest
     steps:
 #       - name: check out
@@ -13,9 +15,10 @@ jobs:
         run: |
           echo "::set-output name=timestamp::$(date +%s)"
           echo "$(date +%s)"
-       
-      - name: display-output-of-previous-step
-        run: echo ${{ steps.get-timestamp.outputs.timestamp }}
+      - name: get-tempDir
+        run: echo ${{env.tempDir}}
+#       - name: display-output-of-previous-step
+#         run: echo ${{ steps.get-timestamp.outputs.timestamp }}
 #       - name: create-a-temp-working-folder
 #         run: |
 #           tempDir="$GITHUB_WORKSPACE/${{steps.get-timestamp.outputs.timestamp}}"
