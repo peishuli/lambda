@@ -9,8 +9,9 @@ jobs:
 
       - id: get-timestamp
         run: |
-          echo "::set-output name=timestamp::$(date +%s)"
-          echo "$(date +%s)"   
+          echo pwd
+          echo "$GITHUB_WORKSPACE"
+          echo "::set-output name=timestamp::$(date +%s)"        
         
       - name: create-a-temp-working-folder
         run: |
