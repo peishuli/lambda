@@ -15,7 +15,7 @@ jobs:
       - name: create-a-temp-working-folder
         run: |
           tempDir="$GITHUB_WORKSPACE/${{steps.get-timestamp.outputs.timestamp}}"
-          echo tempDir
+          echo $tempDir
           
       
 #       - name: display-timestamp
