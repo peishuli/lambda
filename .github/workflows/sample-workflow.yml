@@ -31,5 +31,7 @@ jobs:
         run: |
           pwd
           ls
-          rm -r $tempDir
+          rm -rf $tempDir
+          pwd
+          ls
           
