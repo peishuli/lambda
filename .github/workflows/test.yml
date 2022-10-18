@@ -1,0 +1,16 @@
+
+# this workflow simulate ADO build variables
+name: 'Test Workflow'
+on:
+  workflow_dispatch:
+jobs:
+  sample-job:    
+    name: Sample Job
+    runs-on: ubuntu-latest
+    steps:
+
+      - id: test
+        run: |
+          echo "github.sha = ${{ github.sha }}"  
+          echo "github.run_id = ${{ github.run_id }}"
+          echo "github.run_number = ${{ github.run_number }}"
