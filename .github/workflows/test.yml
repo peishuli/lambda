@@ -19,5 +19,5 @@ jobs:
           echo "GITHUB_RUN_ID = $GITHUB_RUN_ID"
           job_url="https://api.github.com/repos/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID/jobs"
           #job_id=$(curl -s -H "Authorization: token ${{ env.GITHUB_TOKEN}} $job_url | jq -r '.jobs[] | .id')
-          html_url=$(curl -s -H "Authorization: token ${{ env.GITHUB_TOKEN}} $job_url | jq -r '.jobs[] | .html_url')
+          html_url=$(curl $job_url | jq -r '.jobs[] | .html_url')
           echo "html_url = $html_url"
