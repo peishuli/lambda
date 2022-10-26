@@ -23,5 +23,6 @@ jobs:
           job_url="https://api.github.com/repos/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID/jobs"
           echo $job_url
           #curl -s -H "Authorization: Bearer ${{ env.GITHUB_TOKEN}} $job_url
+          curl $job_url
           #job_id=$(curl -s -H "Authorization: token ${{ env.GITHUB_TOKEN}} $job_url | jq -r '.jobs[] | .id')
           #echo "job_id = $job_id"
